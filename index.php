@@ -28,7 +28,7 @@
 <div>
 <p><a class="btn btn--blue" href="<?php echo the_permalink(); ?>">Read More</a></p>
 
-</div>  
+</div>   
 
 <?php endwhile;?>
 
