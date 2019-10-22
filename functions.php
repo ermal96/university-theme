@@ -14,6 +14,7 @@ function university_features() {
   register_nav_menu('footerMenuLocationOne', 'Footer Menu Location One ');
   register_nav_menu('footerMenuLocationTwo', 'Footer Menu Location Two ');
   add_theme_support('title-tag');
+  add_theme_support( 'post-thumbnails' ); 
 }
 
 add_action('after_setup_theme', 'university_features');
