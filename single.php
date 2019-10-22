@@ -12,14 +12,13 @@
 
   <div class="container container--narrow page-section">
 
-      <?php
-        while(have_posts()) {
-          the_post(); ?>
-          <?php the_content(); ?>
+    <?php while(have_posts()) :?>
+
+        <?php  the_post(); ?>
+        <?php the_content(); ?>
+
+    <?php endwhile; ?>   
+       <button onClick="javascript:history.back()">Go Back</button>
   </div>
-
-  <?php }
-
-  get_footer();
-
-?>
+        
+  <?php get_footer(); ?>
