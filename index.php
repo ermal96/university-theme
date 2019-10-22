@@ -17,6 +17,7 @@
 
       <div class="post-item">
         <h2 class="headline headline--medium headline--post-title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <?php the_post_thumbnail() ?>
       </div>
       <div class="metabox">
           <p>Posted by: <?php the_author_posts_link(); ?> on <?php the_time('Y'); ?> Category: <?php echo  get_the_category_list('&'); ?><p>
