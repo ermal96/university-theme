@@ -8,7 +8,7 @@
       <?php the_archive_title()?>
       </h1>
       <div class="page-banner__intro">
-        <p>Latest News</p>
+        <p><?php the_archive_description(); ?></p>
       </div>
     </div>  
   </div>
@@ -35,18 +35,8 @@
 
 <?php endwhile;?>
 
-<?php 
 
-echo paginate_links();
-
-?>
-  </div>
-
-
-
-
-
-
+ </div>
 
 
 <?php get_footer(); ?>
