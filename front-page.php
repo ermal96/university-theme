@@ -40,10 +40,25 @@
 
       </div>
     </div>
+
     <div class="full-width-split__two">
       <div class="full-width-split__inner">
         <h2 class="headline headline--small-plus t-center">From Our Blogs</h2>
+        <?php 
 
+            $homePosts = new WP_Query(array(
+              'posts_per_page' => 2,
+            ));
+            // echo '<pre>';
+            // print_r ($homePosts);
+            // echo '</pre>';
+            while($homePosts->have_posts()) : $homePosts->the_post() ?>
+              
+
+              <li><?php the_title() ?></li>
+
+
+        <?php endwhile;?>
         <div class="event-summary">
           <a class="event-summary__date event-summary__date--beige t-center" href="#">
             <span class="event-summary__month">Jan</span>
@@ -54,20 +69,13 @@
             <p>For the 100th year in a row we are voted #1. <a href="#" class="nu gray">Read more</a></p>
           </div>
         </div>
-        <div class="event-summary">
-          <a class="event-summary__date event-summary__date--beige t-center" href="#">
-            <span class="event-summary__month">Feb</span>
-            <span class="event-summary__day">04</span>  
-          </a>
-          <div class="event-summary__content">
-            <h5 class="event-summary__title headline headline--tiny"><a href="#">Professors in the National Spotlight</a></h5>
-            <p>Two of our professors have been in national news lately. <a href="#" class="nu gray">Read more</a></p>
-          </div>
-        </div>
+
         
         <p class="t-center no-margin"><a href="#" class="btn btn--yellow">View All Blog Posts</a></p>
       </div>
     </div>
+
+
   </div>
 
   <div class="hero-slider">
