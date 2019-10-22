@@ -11,13 +11,35 @@
   </div>
 
   <div class="container container--narrow page-section">
+  <div class="metabox metabox--position-up metabox--with-home-link">
+      <p><a class="metabox__blog-home-link" href="<?php echo  site_url( '/blog' )?>">
+      <i class="fa fa-home" aria-hidden="true"></i> Back to Blog</a> 
+      <span class="metabox__main"> Posted on <?php the_time('Y'); ?> / Category: <?php echo  get_the_category_list('&'); ?></span>
+      </p>
+    </div>
 
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-8">
     <?php while(have_posts()) :?>
 
         <?php  the_post(); ?>
         <?php the_content(); ?>
 
-    <?php endwhile; ?>   
+    <?php endwhile; ?>
+    </div>
+    <div style="background:#ededed; padding: 20px" class="col-6 col-md-4 col-sm-12">
+    <?php if ( is_active_sidebar( 'blog_right_1' ) ) : ?>
+        <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+          <?php dynamic_sidebar( 'blog_right_1' ); ?>
+        </div><!-- #primary-sidebar -->
+    <?php endif; ?>
+    </div>
+    
+  </div>
+       
+
+    
+
        <button onClick="javascript:history.back()">Go Back</button>
   </div>
         
