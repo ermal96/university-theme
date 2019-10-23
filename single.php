@@ -12,7 +12,7 @@
 
   <div class="container container--narrow page-section">
   <div class="metabox metabox--position-up metabox--with-home-link">
-      <p><a class="metabox__blog-home-link" href="<?php echo  site_url( '/blog' )?>">
+      <p><a class="metabox__blog-home-link" href="<?php echo  get_post_type_archive_link('post')?>">
       <i class="fa fa-home" aria-hidden="true"></i> Back to Blog</a> 
       <span class="metabox__main"> Posted on <?php the_time('Y'); ?> / Category: <?php echo  get_the_category_list('&'); ?></span>
       </p>
@@ -31,7 +31,7 @@
     <?php if ( is_active_sidebar( 'blog_right_1' ) ) : ?>
         <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
           <?php dynamic_sidebar( 'blog_right_1' ); ?>
-        </div><!-- #primary-sidebar -->
+        </div>
     <?php endif; ?>
     </div>
     
@@ -40,7 +40,7 @@
 
     
 
-       <button onClick="javascript:history.back()">Go Back</button>
+       <a class="btn btn--blue" style="color:#fff" onClick="javascript:history.back()">Go Back</a>
   </div>
         
   <?php get_footer(); ?>
