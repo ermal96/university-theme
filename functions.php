@@ -93,7 +93,9 @@ function univerity_themes_post_types () {
         'has_archive'           => true,
         'exclude_from_search'   => false,
         'publicly_queryable'    => true,
-        'capability_type'       => 'page',
+        'rewrite'               => array( 
+        'slug' => 'events'
+        ),
         'menu_icon'             => 'dashicons-calendar',
       );
 
