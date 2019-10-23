@@ -22,7 +22,7 @@
         <?php the_post_thumbnail() ?>
       </div>
       <div class="metabox">
-          <p>Posted by: <?php the_author_posts_link(); ?> on <?php the_time('Y'); ?> Category: <?php echo  get_the_category_list('&'); ?><p>
+          <p>Posted by: <?php the_author_posts_link(); ?> on <?php the_time('Y'); ?> / Category: <?php echo  get_the_category_list('&'); ?><p>
       </div>
 
       <div class="generic-content">
