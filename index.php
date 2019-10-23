@@ -20,14 +20,23 @@
         <?php the_post_thumbnail() ?>
       </div>
       <div class="metabox">
-          <p>Posted by: <?php the_author_posts_link(); ?> on <?php the_time('Y'); ?> Category: <?php echo  get_the_category_list('&'); ?><p>
+          <p>Posted by: <?php the_author_posts_link(); ?> on <?php the_time('Y'); ?> / Category: <?php echo  get_the_category_list('&'); ?><p>
       </div>
 
       <div class="generic-content">
-          <?php the_excerpt(); ?>
+          <?php 
+          
+          if(has_excerpt( )) {
+            the_excerpt();
+          }else {
+            echo wp_trim_words(get_the_content(), 20);
+          }
+          
+           ?>
       </div>
-<div>
-<p><a class="btn btn--blue" href="<?php echo the_permalink(); ?>">Read More</a></p>
+<div style="margin:20px 0px 50px 0px">
+
+<a class="btn btn--blue" href="<?php echo the_permalink(); ?>">Read More</a>
 
 </div>   
 
