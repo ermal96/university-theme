@@ -1177,15 +1177,16 @@ Version: 1.0
   }
   
   .btn--large {
-    font-size: 1.3rem;
+    font-size: 1rem;
     padding: 16px 34px;
     border-radius: 7px;
+    direction: block;
   }
   
   @media (min-width: 530px) {
   
     .btn--large {
-      font-size: 1.9rem;
+      font-size: 1.2rem;
     }
   }
   
