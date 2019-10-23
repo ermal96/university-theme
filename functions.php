@@ -76,7 +76,7 @@ function univerity_themes_post_types () {
         'author',
         'thumbnail',
         'comments',
-        'revisions',
+        'revisions'
       );
       
 
