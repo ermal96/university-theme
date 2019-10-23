@@ -602,7 +602,7 @@ Version: 1.0
   
   body {
     color: #333;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     overflow-x: hidden;
     position: relative;
   }
@@ -979,7 +979,7 @@ Version: 1.0
         -ms-flex-positive: 1;
             flex-grow: 1;
     border: none;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     padding: 10px;
   }
   
@@ -996,7 +996,7 @@ Version: 1.0
     border-radius: 4px;
     outline: none;
     background-color: #0D3B66;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     padding: 0 20px;
     margin-left: 10px;
   }
@@ -1247,7 +1247,7 @@ Version: 1.0
   .note-title-field {
     width: 40%;
     font-size: 1.85rem;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Noto Sans JP Condensed', sans-serif;
     font-weight: 300;
     color: #0D3B66;
     border: 1px solid transparent;
@@ -1274,7 +1274,7 @@ Version: 1.0
   
   .note-body-field {
     color: #333;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     resize: none;
     display: block;
     width: 100%;
@@ -1323,7 +1323,7 @@ Version: 1.0
   .new-note-title {
     width: 100%;
     padding: 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     border: none;
     margin-bottom: 10px;
     font-size: 1.15rem;
@@ -1335,7 +1335,7 @@ Version: 1.0
     box-sizing: border-box;
     resize: none;
     padding: 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     border: none;
     margin-bottom: 10px;
     height: 170px;
@@ -1647,7 +1647,7 @@ Version: 1.0
   }
   
   .page-banner__title {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Noto Sans JP Condensed', sans-serif;
     font-weight: 300;
     font-size: 3.6rem;
     margin: 0 0 1rem 0;
@@ -1972,7 +1972,7 @@ Version: 1.0
   
   .headline {
     margin: 0;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Noto Sans JP Condensed', sans-serif;
     font-weight: 300;
   
   }
@@ -2006,7 +2006,7 @@ Version: 1.0
   }
   
   .headline--small-plus {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 1.6875rem;
     font-weight: 400;
     margin-bottom: 1.9rem;
@@ -2029,7 +2029,7 @@ Version: 1.0
   }
   
   .headline--tiny {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 1.3875rem;
     margin-bottom: .25rem;
   }
@@ -2053,7 +2053,7 @@ Version: 1.0
   }
   
   .generic-content h1, .generic-content h2, .generic-content h3, .generic-content h4, .generic-content h5, .generic-content h6 {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Noto Sans JP Condensed', sans-serif;
     font-weight: 300;
     margin-top: 0;
     margin-bottom: 1rem;
