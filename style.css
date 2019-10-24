@@ -2369,3 +2369,7 @@ Version: 1.0
     border-bottom: none;
     margin-bottom: 0;
   }
+
+  .screen-reader-text {
+    display: none;
+}
