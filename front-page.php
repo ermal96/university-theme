@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
   <div class="page-banner">
-  <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/library-hero.jpg') ?>);"></div>
+  <div class="page-banner__bg-image" style="background-image: url(<?php the_post_thumbnail_url() ?>);"></div>
     <div class="page-banner__content container t-center c-white">
       <h1 class="headline headline--large">Welcome!</h1>
       <h2 class="headline headline--medium">We think you’ll like it here.</h2>
@@ -15,27 +15,35 @@
       <div class="full-width-split__inner">
         <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
         <?php 
-        
+        $today = date('Ymd');
         $homeEvents = new WP_Query(array(
-          'post_type' => 'event',
-          'posts_per_page' => 2
+          'post_type'          => 'event',
+          'posts_per_page'     => -1,
+          'meta_key'           => 'event_date',
+          'orderby'            => 'meta_value',
+          'order'              => 'ASC',
+          'meta_query'         => array(
+            array(
+              'key'            => 'event_date',
+              'compare'        => '>=',
+              'value'          => $today,
+              'type'           => 'numeric'
+            ),
+          )
         ));
-        while($homeEvents->have_posts()): $homeEvents->the_post() 
-        $eventDate = new DateTime(get_field('event_date'));
-        ?>
-   
+
+        while($homeEvents->have_posts()): $homeEvents->the_post()  ?>
+
         <div class="event-summary">
               <a class="event-summary__date t-center" href="<?php the_permalink() ?>">
                 <span class="event-summary__month"><?php 
+                $eventDate = new DateTime(get_field('event_date'));
                  echo $eventDate->format('M');
                 ?></span>
                 <span class="event-summary__day"><?php 
-                  echo $eventDate->format('d');
+                  echo $eventDate->format('d',);
                 ?></span>  
               </a>
-
-
-
 
                   <div class="event-summary__content">
                     <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h5>
