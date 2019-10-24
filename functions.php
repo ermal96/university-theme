@@ -84,15 +84,12 @@ function univerity_themes_post_types () {
         'show_in_rest'          => true,
         'labels'                => $labels,
         'supports'              => $supports,
-        'hierarchical'          => false,
         'public'                => true,
         'show_ui'               => true,
         'show_in_menu'          => true,
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => true,
         'has_archive'           => true,
-        'exclude_from_search'   => false,
-        'publicly_queryable'    => true,
         'rewrite'               => array( 
         'slug' => 'events'
         ),
