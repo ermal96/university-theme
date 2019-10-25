@@ -10,8 +10,8 @@
 
   <div class="container container--narrow page-section">
   <div class="metabox metabox--position-up metabox--with-home-link">
-      <p><a class="metabox__blog-home-link" href="<?php  echo get_post_type_archive_link('event'); ?>">
-      <i class="fa fa-home" aria-hidden="true"></i> Back to Events</a> 
+      <p><a class="metabox__blog-home-link" href="<?php  echo get_post_type_archive_link('program'); ?>">
+      <i class="fa fa-home" aria-hidden="true"></i> Back to Programs</a> 
       <span class="metabox__main"> Posted on <?php the_time('Y'); ?></span>
       </p>
     </div>
@@ -22,32 +22,19 @@
 
         <?php  the_post(); ?>
         <?php the_content(); ?>
-        <?php
-          $relatedPrograms = get_field('related_program');
-          echo '<pre>';
-          print_r($relatedPrograms);
-          echo '</pre>';
 
-
-
-        ?>
     <?php endwhile; ?>
     </div>
     <div style="background:#ededed; padding: 20px" class="col-6 col-md-4 col-sm-12">
     <?php if ( is_active_sidebar( 'blog_right_1' ) ) : ?>
         <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
           <?php dynamic_sidebar( 'blog_right_1' ); ?>
-         
         </div>
     <?php endif; ?>
     </div>
     
   </div>
        
-
-    
-
-       <button onClick="javascript:history.back()">Go Back</button>
   </div>
         
   <?php get_footer(); ?>

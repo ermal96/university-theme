@@ -30,6 +30,14 @@ add_action('after_setup_theme', 'university_features');
 // University Adjust Queries
 
 function university_adjust_queries($query) {
+  //Program 
+  if(!is_admin() && is_post_type_archive('program') && $query->is_main_query()){
+    $query->set('orderby', 'title');
+    $query->set('order', 'ASC');
+    $query->set('post_per_page', -1);
+  }
+
+  //Event Date
   if(!is_admin() && is_post_type_archive('event') && $query->is_main_query()){
     $today = date('Ymd');
     $query->set('meta_key', 'event_date');
@@ -74,6 +82,7 @@ add_action( 'widgets_init', 'unverity_widgets_init' );
 
 function univerity_themes_post_types () {
 
+//Events Post Type
        $labels = array(
         'name'                          => 'Events',
         'singular_name'                 => 'Event',
@@ -121,6 +130,50 @@ function univerity_themes_post_types () {
       );
 
 	register_post_type( 'event', $args );
+
+
+//Porograms Post Type
+$labels = array(
+  'name'                          => 'Programs',
+  'singular_name'                 => 'Program',
+  'edit_item'                     => 'Edit Program',
+  'new_item'                      => 'New Program',
+  'view_item'                     => 'View Program',
+  'search_items'                  => 'Search Program',
+  'not_found'                     => 'Programs Not Found',
+  'all_items'                     => 'All Programs',
+  'archives'                      => 'Programs Archives',
+  'attributes'                    => 'Programs Attributes',
+  'item_published'                => 'Program Published',
+  'item_updated'                  => 'Program Updated',
+ );
+ 
+$supports = array (
+  'title',
+  'editor',
+  'author',
+  'revisions'
+);
+
+
+$args = array(
+  'show_in_rest'          => true,
+  'labels'                => $labels,
+  'supports'              => $supports,
+  'public'                => true,
+  'show_ui'               => true,
+  'show_in_menu'          => true,
+  'show_in_admin_bar'     => true,
+  'show_in_nav_menus'     => true,
+  'has_archive'           => true,
+  'rewrite'               => array( 
+  'slug' => 'programs'
+  ),
+  'menu_icon'             => 'dashicons-awards',
+);
+
+register_post_type( 'program', $args );
+
 
 }
 
