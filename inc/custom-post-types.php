@@ -7,24 +7,24 @@
 function univerity_themes_post_types()
 {
 
-//Events Post Type
+//Campus Post Type
     $labels = array(
-        'name'                          => 'Events',
-        'singular_name'                 => 'Event',
-        'edit_item'                     => 'Edit Event',
-        'new_item'                      => 'New Event',
-        'view_item'                     => 'View Event',
-        'search_items'                  => 'Search Events',
-        'not_found'                     => 'Events Not Found',
-        'all_items'                     => 'All Events',
-        'archives'                      => 'Events Archives',
-        'attributes'                    => 'Events Attributes',
-        'insert_into_item'              => 'Insert Into Event',
-        'featured_image'                => 'Image Event',
-        'set_featured_image'            => 'Set Event Image',
-        'remove_featured_image'         => 'Remove Event Image',
-        'item_published'                => 'Event Published',
-        'item_updated'                  => 'Event Updated',
+        'name'                          => 'Campus',
+        'singular_name'                 => 'Campus',
+        'edit_item'                     => 'Edit Campus',
+        'new_item'                      => 'New Campus',
+        'view_item'                     => 'View Campus',
+        'search_items'                  => 'Search Campus',
+        'not_found'                     => 'Campus Not Found',
+        'all_items'                     => 'All Campus',
+        'archives'                      => 'Campus Archives',
+        'attributes'                    => 'Campus Attributes',
+        'insert_into_item'              => 'Insert Into Campus',
+        'featured_image'                => 'Image Campus',
+        'set_featured_image'            => 'Set Campus Image',
+        'remove_featured_image'         => 'Remove Campus Image',
+        'item_published'                => 'Campus Published',
+        'item_updated'                  => 'Campus Updated',
        );
        
     $supports = array(
@@ -43,11 +43,53 @@ function univerity_themes_post_types()
         'supports'              => $supports,
         'public'                => true,
         'has_archive'           => true,
-        'rewrite'               => array(
-        'slug' => 'events'
-        ),
-        'menu_icon'             => 'dashicons-calendar',
+        'menu_icon'             => 'dashicons-location-alt',
       );
+
+    register_post_type('campus', $args);
+
+
+    //Events Post Type
+    $labels = array(
+      'name'                          => 'Events',
+      'singular_name'                 => 'Event',
+      'edit_item'                     => 'Edit Event',
+      'new_item'                      => 'New Event',
+      'view_item'                     => 'View Event',
+      'search_items'                  => 'Search Events',
+      'not_found'                     => 'Events Not Found',
+      'all_items'                     => 'All Events',
+      'archives'                      => 'Events Archives',
+      'attributes'                    => 'Events Attributes',
+      'insert_into_item'              => 'Insert Into Event',
+      'featured_image'                => 'Image Event',
+      'set_featured_image'            => 'Set Event Image',
+      'remove_featured_image'         => 'Remove Event Image',
+      'item_published'                => 'Event Published',
+      'item_updated'                  => 'Event Updated',
+     );
+     
+    $supports = array(
+      'title',
+      'editor',
+      'excerpt',
+      'author',
+      'thumbnail',
+      'revisions'
+    );
+    
+
+    $args = array(
+      'show_in_rest'          => true,
+      'labels'                => $labels,
+      'supports'              => $supports,
+      'public'                => true,
+      'has_archive'           => true,
+      'rewrite'               => array(
+      'slug' => 'events'
+      ),
+      'menu_icon'             => 'dashicons-calendar',
+    );
 
     register_post_type('event', $args);
 

@@ -18,3 +18,7 @@ require_once('page-banner.php');
 
 //Require Widgets
 //require_once('widgets.php');
+
+// Require Goolge Mapp Api Key
+
+require_once('google-map.php');
