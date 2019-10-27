@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
-<?php get_template_part('/templates/page-title', 'page-title'); ?>
-
+<?php pageBanner(); ?>
 
 <div class="container container--narrow page-section">
   <ul class="link-list min-list">

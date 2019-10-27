@@ -24,9 +24,36 @@ function university_features()
     register_nav_menu('footerMenuLocationTwo', 'Footer Menu Location Two ');
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+    add_image_size('professorLandscape', 400, 260, true);
+    add_image_size('professorPortrait', 480, 650, true);
 }
 
 add_action('after_setup_theme', 'university_features');
+
+
+function pageBanner()
+{
+    ?>
+
+<div class="page-banner">
+  <div class="page-banner__bg-image" style="background-image: url(<?php $backImg = get_field('page_banner_background_image');
+    echo $backImg['url']
+    ?>);">
+  </div>
+  <div class="page-banner__content container container--narrow">
+    <h2 class="page-banner__title"><?php the_title(); ?>
+    </h2>
+    <div class="page-banner__intro">
+      <p><?php the_field('page_banner_subtitle'); ?>
+      </p>
+    </div>
+  </div>
+</div>
+
+<?php
+}
+
+
 
 
 // University Adjust Queries

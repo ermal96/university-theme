@@ -1,5 +1,5 @@
 <?php get_header();?>
-<?php get_template_part('/templates/page-title', 'page-title'); ?>
+<?php pageBanner(); ?>
 <div class="container container--narrow page-section">
   <div class="metabox metabox--position-up metabox--with-home-link">
     <p><a class="metabox__blog-home-link"

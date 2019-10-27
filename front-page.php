@@ -1,16 +1,6 @@
 <?php get_header() ?>
 
-<div class="page-banner">
-    <div class="page-banner__bg-image"
-        style="background-image: url(<?php the_post_thumbnail_url() ?>);">
-    </div>
-    <div class="page-banner__content container t-center c-white">
-        <h1 class="headline headline--large">Welcome</h1>
-        <h2 class="headline headline--medium">We think you’ll like it here.</h2>
-        <h3 class="headline headline--small">Why don’t you check out the major you’re interested in?</h3>
-        <a href="#" class="btn btn--large btn--blue">Find Your Major</a>
-    </div>
-</div>
+<?php pageBanner(); ?>
 
 <div class="full-width-split group">
     <div class="full-width-split__one">
