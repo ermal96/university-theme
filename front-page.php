@@ -5,7 +5,7 @@
         style="background-image: url(<?php the_post_thumbnail_url() ?>);">
     </div>
     <div class="page-banner__content container t-center c-white">
-        <h1 class="headline headline--large">Welcome!</h1>
+        <h1 class="headline headline--large">Welcome</h1>
         <h2 class="headline headline--medium">We think you’ll like it here.</h2>
         <h3 class="headline headline--small">Why don’t you check out the major you’re interested in?</h3>
         <a href="#" class="btn btn--large btn--blue">Find Your Major</a>
@@ -16,7 +16,7 @@
     <div class="full-width-split__one">
         <div class="full-width-split__inner">
             <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
-            <?php 
+            <?php
         $today = date('Ymd');
         $homeEvents = new WP_Query(array(
           'post_type'          => 'event',
@@ -34,17 +34,17 @@
           )
         ));
 
-        while($homeEvents->have_posts()): $homeEvents->the_post()  ?>
+        while ($homeEvents->have_posts()): $homeEvents->the_post()  ?>
 
             <div class="event-summary">
                 <a class="event-summary__date t-center"
                     href="<?php the_permalink() ?>">
-                    <span class="event-summary__month"><?php 
+                    <span class="event-summary__month"><?php
                 $eventDate = new DateTime(get_field('event_date'));
                  echo $eventDate->format('M');
                 ?></span>
-                    <span class="event-summary__day"><?php 
-                  echo $eventDate->format('d',);
+                    <span class="event-summary__day"><?php
+                  echo $eventDate->format('d', );
                 ?></span>
                 </a>
 
@@ -72,13 +72,13 @@
     <div class="full-width-split__two">
         <div class="full-width-split__inner">
             <h2 class="headline headline--small-plus t-center">From Our Blogs</h2>
-            <?php 
+            <?php
 
             $homePosts = new WP_Query(array(
               'posts_per_page' => 2,
             ));
 
-            while($homePosts->have_posts()) : $homePosts->the_post() ?>
+            while ($homePosts->have_posts()) : $homePosts->the_post() ?>
 
             <div class="event-summary">
                 <a class="event-summary__date event-summary__date--beige t-center"
@@ -141,4 +141,4 @@
     </div>
 </div>
 
-<?php get_footer() ;?>
+<?php get_footer() ;
