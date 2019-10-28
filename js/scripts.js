@@ -11,3 +11,4 @@ import GoogleMap from './modules/GoogleMap';
 var mobileMenu = new MobileMenu();
 var heroSlider = new HeroSlider();
 var googleMap = new GoogleMap();
+
