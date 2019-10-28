@@ -4,8 +4,7 @@ get_header();
 
 // Get Page Banner with args
 pageBanner(array(
-  'title' => get_the_archive_title(),
-  'subtitle' => get_the_archive_description()
+  'title' => get_the_archive_title()
 ));
  
 ?>

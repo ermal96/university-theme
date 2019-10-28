@@ -4,6 +4,7 @@
 
 function university_files()
 {
+    wp_enqueue_script('googleMap', '//maps.googleapis.com/maps/api/js?key=AIzaSyAkuRL11s7kwmLpyEr5hnQqnphLAo8n8_w', null, '1.0', true);
     wp_enqueue_script('main-university-js', get_theme_file_uri('/js/scripts-bundled.js'), null, '1.0', true);
     wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500');
     wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');

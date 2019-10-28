@@ -5,7 +5,7 @@
 <div class="full-width-split group">
     <div class="full-width-split__one">
         <div class="full-width-split__inner">
-            <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
+            <h2 class="headline headline--small-plus t-center">Upcoming Eventss</h2>
             <?php
         $today = date('Ymd');
         $homeEvents = new WP_Query(array(
