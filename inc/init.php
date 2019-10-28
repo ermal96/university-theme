@@ -18,5 +18,4 @@ include('custom-post-types.php');
 //Include Widgets
 include('widgets.php');
 
-// Include Goolge Mapp Api Key
-include('google-map.php');
+
