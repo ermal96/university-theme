@@ -1,24 +1,22 @@
 <?php
 
-//Require Includes
-require_once('features.php');
+//Include Page Banner
+include('page-banner.php');
 
-//Require Includes
-require_once('include.php');
+//Include Theme Features
+include('features.php');
 
-//Require Queries
-require_once('adjust-queries.php');
+//Include Includes
+include('include.php');
 
+//Include Queries
+include('adjust-queries.php');
 
-// Require Post Types
-require_once('custom-post-types.php');
+// Include Post Types
+include('custom-post-types.php');
 
-//Require Page Banner
-require_once('page-banner.php');
+//Include Widgets
+include('widgets.php');
 
-//Require Widgets
-//require_once('widgets.php');
-
-// Require Goolge Mapp Api Key
-
-require_once('google-map.php');
+// Include Goolge Mapp Api Key
+include('google-map.php');

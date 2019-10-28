@@ -1,6 +1,11 @@
-<?php get_header(); ?>
+<?php get_header(); 
 
-<?php pageBanner(); ?>
+//Page Banner with args
+pageBanner(array(
+  'title' => 'Programs', 
+  'subtitle' => 'Here you can see our programs we teach '
+)); 
+ ?>
 
 <div class="container container--narrow page-section">
   <ul class="link-list min-list">

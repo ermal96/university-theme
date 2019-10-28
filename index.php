@@ -1,7 +1,9 @@
-<?php get_header(); ?>
+<?php get_header(); 
 
-
-<?php pageBanner(); ?>
+// Get Page Banner with args
+ pageBanner(array('title' => 'Blog', 'subtitle' => 'Welcome To Your Blog')); 
+ 
+ ?>
 
 <div class="container container--narrow page-section">
 

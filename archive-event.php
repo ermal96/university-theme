@@ -1,5 +1,13 @@
-<?php get_header(); ?>
-<?php pageBanner(); ?>
+<?php get_header();
+
+// Get Page Banner with args
+pageBanner(array(
+    'title' => 'Events', 
+    'subtitle' => 'Here you can see our latest Events '
+)); 
+
+?>
+
 <div class="container container--narrow page-section">
 
     <?php
