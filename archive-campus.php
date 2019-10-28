@@ -15,12 +15,12 @@ pageBanner(array(
     ?>
 
    <div class="marker" data-lat="<?php  echo $mapLocation['lat']; ?>" data-lng="<?php  echo $mapLocation['lng']; ?>">
-
+     <h4> <a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
+     <?php echo $mapLocation['address'] ?>
    </div>
 
     <?php endwhile; ?>
   </div>
-  <?php  echo paginate_links();?>
 </div>
 
 <?php get_footer();

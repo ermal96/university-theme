@@ -16,7 +16,6 @@
   <?php  the_post(); ?>
   <?php the_content(); ?>
   <?php
-        $today = date('Ymd');
         $relatedProfessors = new WP_Query(array(
           'post_type'          => 'professor',
           'posts_per_page'     => -1,
@@ -47,8 +46,8 @@
         </span>
       </a>
     </li>
-  </ul>
   <?php endwhile; ?>
+  </ul>
   <?php  wp_reset_postdata()?>
   <?php endif;?>
   <?php endwhile; ?>
