@@ -7,7 +7,7 @@
 function univerity_themes_post_types()
 {
 
-//Campus Post Type
+//Campuses Post Type
     $labels = array(
         'name'                          => 'Campus',
         'singular_name'                 => 'Campus',
@@ -43,6 +43,9 @@ function univerity_themes_post_types()
         'supports'              => $supports,
         'public'                => true,
         'has_archive'           => true,
+        'rewrite'               => array(
+          'slug' => 'campuses'
+          ),
         'menu_icon'             => 'dashicons-location-alt',
       );
 
