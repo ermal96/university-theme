@@ -44,8 +44,16 @@ class Search {
     }
 
     getResults(){
-        this.resultsDiv.html("hshhs");
         this.isSpinnerVisible = false;
+        $.getJSON(`http://localhost/wordpress/wp-json/wp/v2/posts?search=${this.searchField.val()}`, (res) => {
+        console.log(res);
+        this.resultsDiv.html(`
+        <h2 class="search-overlay__section-title">${res.length ? 'Result found  for "' +  this.searchField.val() : 'Sorry no result found ' + this.searchField.val() }</h2>
+        <ul class="link-list min-list">
+           ${res.map(data => `<li><a href="${data.link}">${data.title.rendered}</a></li>`).join('')}
+        </ul>
+`)
+    } )
     }
 
     keyPresDispatcher(e){
