@@ -16,6 +16,8 @@ include('adjust-queries.php');
 include('custom-post-types.php');
 
 //Include Widgets
-include('widgets.php');
+//include('widgets.php');
 
 
+// Include Custom Rest Fields
+include('custom-field-rest-api.php');
