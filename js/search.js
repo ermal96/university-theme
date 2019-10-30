@@ -40,39 +40,84 @@ class Search {
     this.prevValue = this.searchField.val();
   }
 
+  //Getting Results from api and render data
   getResults() {
-    $.when(
-      $.getJSON(
-        `${universityData.root_url}/wp-json/wp/v2/posts?search=${this.searchField.val()}`
-      ),
-      $.getJSON(
-        `${universityData.root_url}/wp-json/wp/v2/pages?search=${this.searchField.val()}`
-      )
-    ).then(
-      (posts, pages) => {
-        this.isSpinnerVisible = false;
-        var allResults = posts[0].concat(pages[0]);
-        this.resultsDiv.html(`
-            <h2 class="search-overlay__section-title">${
-              allResults.length
-                ? "Result found for " + this.searchField.val()
-                : "Sorry no result found " + this.searchField.val()
-            }</h2>
+
+    $.getJSON(`${universityData.root_url}/wp-json/university/v1/search?term=${this.searchField.val()}`, (res) => {
+      this.resultsDiv.html(`
+      <div class="row">
+
+        <div class="one-third">
+            <h3 class="search-overlay__section-title">General Info</h3>
+            ${res.generalInfo.length?  `
             <ul class="link-list min-list">
-               ${allResults
-                 .map(
-                   data =>
-                     `<li><a href="${data.link}">${data.title.rendered}</a>${data.type =="post" ? ' By ' + data.authorName: ''}</li>`
-                 )
-                 .join("")}
-            </ul>
-    `);
-      },
-      () => {
-        this.resultsDiv.html("<p>Unexpected Error Please Try Again </p>");
-      }
-    );
+            ${res.generalInfo.map((item) => {
+              return `<li><a class="a-flex" href="${item.link}"><span>${item.title}</span>
+              ${item.img? `<img style="height:100px;  width:35%; object-fit:cover;" src="${item.img}"> `: ''}
+              </a>
+              </li>`
+            }).join("")}
+            </ul>`: 'Nothing found On General Info'}
+          
+        </div>
+
+        <div class="one-third">
+           <h3 class="search-overlay__section-title">Programs</h3>
+              ${res.programs.length? `
+              <ul class="link-list min-list">
+              ${res.programs.map((item) => {
+                return `<li><a class="a-flex" href="${item.link}"><span>${item.title}</span>
+                ${item.img? `<img style="height:100px;  width:35%; object-fit:cover;" src="${item.img}"> `: ''}
+                </a>
+                </li>`
+              }).join("")}
+              </ul>`: 'Nothing found On Programs'}
+             
+           <h3 class="search-overlay__section-title">Professors</h3>
+              ${res.professors.length? `
+              <ul class="link-list min-list">
+                ${res.professors.map((item) => {
+                  return `<li><a class="a-flex" href="${item.link}"><span>${item.title}</span>
+                  ${item.img? `<img style="height:100px;  width:35%; object-fit:cover;" src="${item.img}"> `: ''}
+                  </a>
+                  </li>`
+                }).join("")}
+              </ul>`: 'Nothing found On Professors'}
+              
+        </div>
+
+        <div class="one-third">
+           <h3 class="search-overlay__section-title">Campuses</h3>
+              ${res.campuses.length? `
+              <ul class="link-list min-list">
+                ${res.campuses.map((item) => {
+                  return `<li><a class="a-flex" href="${item.link}"><span>${item.title}</span>
+                  ${item.img? `<img style="height:100px;  width:35%; object-fit:cover;" src="${item.img}"> `: ''}
+                  </a>
+                  </li>`
+                }).join("")}
+              </ul>`: 'Nothing found On Campuses'}
+              
+          <h3 class="search-overlay__section-title">Events</h3>
+            ${res.events.length? `
+            <ul class="link-list min-list">
+            ${res.events.map((item) => {
+              return `<li><a class="a-flex" href="${item.link}"><span>${item.title}</span>
+              ${item.img? `<img style="height:100px;  width:35%; object-fit:cover;" src="${item.img}"> `: ''}
+              </a>
+              </li>`
+            }).join("")}
+             </ul>`: 'Nothing found On Events'}
+
+        </div>
+
+      </div>
+      `);
+    });
+
+
   }
+
 
   keyPresDispatcher(e) {
     if (

@@ -2377,3 +2377,21 @@ body.admin-bar .search-overlay {
 .screen-reader-text {
   display: none;
 }
+
+
+.a-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.a-flex span {
+  flex: 1;
+  background: 
+  #e8e8e8;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:15px;
+}
