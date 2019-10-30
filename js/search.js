@@ -43,14 +43,10 @@ class Search {
   getResults() {
     $.when(
       $.getJSON(
-        `${
-          universityData.root_url
-        }/wp-json/wp/v2/posts?search=${this.searchField.val()}`
+        `${universityData.root_url}/wp-json/wp/v2/posts?search=${this.searchField.val()}`
       ),
       $.getJSON(
-        `${
-          universityData.root_url
-        }/wp-json/wp/v2/pages?search=${this.searchField.val()}`
+        `${universityData.root_url}/wp-json/wp/v2/pages?search=${this.searchField.val()}`
       )
     ).then(
       (posts, pages) => {
@@ -66,7 +62,7 @@ class Search {
                ${allResults
                  .map(
                    data =>
-                     `<li><a href="${data.link}">${data.title.rendered}</a></li>`
+                     `<li><a href="${data.link}">${data.title.rendered}</a>${data.type =="post" ? ' By ' + data.authorName: ''}</li>`
                  )
                  .join("")}
             </ul>
@@ -121,4 +117,4 @@ class Search {
   }
 }
 
-var search = new Search();
+new Search();
