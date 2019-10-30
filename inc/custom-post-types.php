@@ -141,38 +141,38 @@ function univerity_themes_post_types()
 
     //Porograms Post Type
     $labels = array(
-  'name'                          => 'Programs',
-  'singular_name'                 => 'Program',
-  'edit_item'                     => 'Edit Program',
-  'new_item'                      => 'New Program',
-  'view_item'                     => 'View Program',
-  'search_items'                  => 'Search Program',
-  'not_found'                     => 'Programs Not Found',
-  'all_items'                     => 'All Programs',
-  'archives'                      => 'Programs Archives',
-  'attributes'                    => 'Programs Attributes',
-  'item_published'                => 'Program Published',
-  'item_updated'                  => 'Program Updated',
+    'name'                          => 'Programs',
+    'singular_name'                 => 'Program',
+    'edit_item'                     => 'Edit Program',
+    'new_item'                      => 'New Program',
+    'view_item'                     => 'View Program',
+    'search_items'                  => 'Search Program',
+    'not_found'                     => 'Programs Not Found',
+    'all_items'                     => 'All Programs',
+    'archives'                      => 'Programs Archives',
+    'attributes'                    => 'Programs Attributes',
+    'item_published'                => 'Program Published',
+    'item_updated'                  => 'Program Updated',
  );
  
     $supports = array(
-  'title',
-  'editor',
-  'author',
-  'revisions'
+    'title',
+    'editor',
+    'author',
+    'revisions'
 );
 
 
     $args = array(
-  'show_in_rest'          => true,
-  'labels'                => $labels,
-  'supports'              => $supports,
-  'public'                => true,
-  'has_archive'           => true,
-  'rewrite'               => array(
-  'slug' => 'programs'
-  ),
-  'menu_icon'             => 'dashicons-awards',
+    'show_in_rest'          => true,
+    'labels'                => $labels,
+    'supports'              => $supports,
+    'public'                => true,
+    'has_archive'           => true,
+    'rewrite'               => array(
+    'slug' => 'programs'
+    ),
+    'menu_icon'             => 'dashicons-awards',
 );
 
     register_post_type('program', $args);
