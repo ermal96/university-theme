@@ -149,13 +149,12 @@ class Search {
             <div class="search-overlay__top">
                 <div class="container">
                     <i class="fa fa-search search-overlay__icon" aria-hidden="true"></i>
-                        <input placeholder="what are you looking for ?" type="text" name="" id="search-term" class="search-term">
+                    <input placeholder="what are you looking for ?" type="text" name="" id="search-term" class="search-term">
                     <i class="fa fa-close search-overlay__close" aria-hidden="true"></i>
                 </div>
             </div>
             <div class="container">
-                <div id="search-overlay__results">
-                </div>
+                <div id="search-overlay__results"></div>
             </div>
             </div>
         `);
