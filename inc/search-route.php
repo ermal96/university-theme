@@ -42,7 +42,8 @@ function universitySearchResults ($data) {
             array_push($results['programs'], array(
                 'title' => get_the_title(),
                 'link'  => get_the_permalink(),
-                'img'   => get_the_post_thumbnail_url()
+                'img'   => get_the_post_thumbnail_url(),
+                'id'    => get_the_ID()
             ));
         }
         if(get_post_type() == 'event'){
@@ -61,6 +62,30 @@ function universitySearchResults ($data) {
         }
 
     }
+
+    $programRelQuery = new WP_Query(array(
+        'post_type'          => 'professor',
+        'meta_query'         => array(
+          array(
+            'key'            => 'related_program',
+            'compare'        => 'LIKE',
+            'value'          => '"' . $results['programs'][0]['id'] .'"'
+          )
+        )
+    ));
+
+
+    while($programRelQuery->have_posts()){
+        $programRelQuery->the_post();
+            array_push($results['professors'], array(
+                'title' => get_the_title(),
+                'link'  => get_the_permalink(),
+                'img'   => get_the_post_thumbnail_url()
+            ));
+    }
+
+    $results['professors'] = array_values(array_unique($results['professors'], SORT_REGULAR));
+
     return $results;
 }
 
