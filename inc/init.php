@@ -1,5 +1,8 @@
 <?php
 
+//Include 
+include('search-route.php');
+
 //Include Page Banner
 include('page-banner.php');
 
@@ -21,3 +24,5 @@ include('custom-post-types.php');
 
 // Include Custom Rest Fields
 include('custom-field-rest-api.php');
+
+
