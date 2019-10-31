@@ -1312,9 +1312,8 @@ body.login {
   line-height: 1.65;
   font-size: 1.15rem;
   padding: 25px;
-  min-height: 175px;
   outline: none;
-  border: 1px solid #ccc;
+  border:1px solid transparent;
   margin-top: 20px;
 }
 

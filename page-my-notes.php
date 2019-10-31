@@ -26,13 +26,14 @@ $userNotes = new WP_Query(array(
         <ul class="min-list link-list" id="my-notes">
 
         <?php while($userNotes->have_posts()): $userNotes->the_post() ?>
-                <li class="">
-                    <input class="note-title-field" type="text" value="<?php echo esc_attr(get_the_title()) ?>">
+                <li data-id="<?php the_ID() ?>">
+                    <input readonly class="note-title-field" type="text" value="<?php echo esc_attr(get_the_title()) ?>">
                     <span class="edit-note"><i class="fa fa-pencil"></i> Edit</span>
                     <span class="delete-note"><i class="fa fa-trash-o"></i> Delete</span>
-                    <textarea class="note-body-field" cols="30" rows="10">
+                    <textarea readonly class="note-body-field" cols="30" rows="10">
                         <?php echo esc_attr(the_content()) ?>
                     </textarea>
+                    <span class="update-note btn btn--blue btn--small"><i class="fa fa-arrow-right"></i> Save</span>
                 </li>
         <?php endwhile; ?>
 
