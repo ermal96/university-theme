@@ -42,83 +42,144 @@ class Search {
 
   //Getting Results from api and render data
   getResults() {
-
-    $.getJSON(`${universityData.root_url}/wp-json/university/v1/search?term=${this.searchField.val()}`, (res) => {
-      console.log(res);
-      this.resultsDiv.html(`
+    $.getJSON(
+      `${
+        universityData.root_url
+      }/wp-json/university/v1/search?term=${this.searchField.val()}`,
+      res => {
+        console.log(res);
+        this.resultsDiv.html(`
       <div class="row">
 
         <div class="one-third">
             <h3 class="search-overlay__section-title">General Info</h3>
-            ${res.generalInfo.length?  `
+            ${
+              res.generalInfo.length
+                ? `
             <ul class="link-list min-list">
-            ${res.generalInfo.map((item) => {
-              return `<li><a class="a-flex" href="${item.link}"><span>${item.title}</span>
-              ${item.img? `<img style="height:100px;  width:35%; object-fit:cover;" src="${item.img}"> `: ''}
+            ${res.generalInfo
+              .map(item => {
+                return `<li><a class="a-flex" href="${item.link}"><span>${
+                  item.title
+                }</span>
+              ${
+                item.img
+                  ? `<img style="height:100px;  width:35%; object-fit:cover;" src="${item.img}"> `
+                  : ""
+              }
               </a>
-              </li>`
-            }).join("")}
-            </ul>`: 'Nothing found On General Info'}
+              </li>`;
+              })
+              .join("")}
+            </ul>`
+                : "Nothing found On General Info"
+            }
           
         </div>
 
         <div class="one-third">
            <h3 class="search-overlay__section-title">Programs</h3>
-              ${res.programs.length? `
+              ${
+                res.programs.length
+                  ? `
               <ul class="link-list min-list">
-              ${res.programs.map((item) => {
-                return `<li><a class="a-flex" href="${item.link}"><span>${item.title}</span>
-                ${item.img? `<img style="height:100px;  width:35%; object-fit:cover;" src="${item.img}"> `: ''}
+              ${res.programs
+                .map(item => {
+                  return `<li><a class="a-flex" href="${item.link}"><span>${
+                    item.title
+                  }</span>
+                ${
+                  item.img
+                    ? `<img style="height:100px;  width:35%; object-fit:cover;" src="${item.img}"> `
+                    : ""
+                }
                 </a>
-                </li>`
-              }).join("")}
-              </ul>`: 'Nothing found On Programs'}
+                </li>`;
+                })
+                .join("")}
+              </ul>`
+                  : "Nothing found On Programs"
+              }
              
            <h3 class="search-overlay__section-title">Professors</h3>
-              ${res.professors.length? `
+              ${
+                res.professors.length
+                  ? `
               <ul class="link-list min-list">
-                ${res.professors.map((item) => {
-                  return `<li><a class="a-flex" href="${item.link}"><span>${item.title}</span>
-                  ${item.img? `<img style="height:100px;  width:35%; object-fit:cover;" src="${item.img}"> `: ''}
+                ${res.professors
+                  .map(item => {
+                    return `<li><a class="a-flex" href="${item.link}"><span>${
+                      item.title
+                    }</span>
+                  ${
+                    item.img
+                      ? `<img style="height:100px;  width:35%; object-fit:cover;" src="${item.img}"> `
+                      : ""
+                  }
                   </a>
-                  </li>`
-                }).join("")}
-              </ul>`: 'Nothing found On Professors'}
+                  </li>`;
+                  })
+                  .join("")}
+              </ul>`
+                  : "Nothing found On Professors"
+              }
               
         </div>
 
         <div class="one-third">
            <h3 class="search-overlay__section-title">Campuses</h3>
-              ${res.campuses.length? `
+              ${
+                res.campuses.length
+                  ? `
               <ul class="link-list min-list">
-                ${res.campuses.map((item) => {
-                  return `<li><a class="a-flex" href="${item.link}"><span>${item.title}</span>
-                  ${item.img? `<img style="height:100px;  width:35%; object-fit:cover;" src="${item.img}"> `: ''}
+                ${res.campuses
+                  .map(item => {
+                    return `<li><a class="a-flex" href="${item.link}"><span>${
+                      item.title
+                    }</span>
+                  ${
+                    item.img
+                      ? `<img style="height:100px;  width:35%; object-fit:cover;" src="${item.img}"> `
+                      : ""
+                  }
                   </a>
-                  </li>`
-                }).join("")}
-              </ul>`: 'Nothing found On Campuses'}
+                  </li>`;
+                  })
+                  .join("")}
+              </ul>`
+                  : "Nothing found On Campuses"
+              }
               
           <h3 class="search-overlay__section-title">Events</h3>
-            ${res.events.length? `
+            ${
+              res.events.length
+                ? `
             <ul class="link-list min-list">
-            ${res.events.map((item) => {
-              return `<li><a class="a-flex" href="${item.link}"><span>${item.title}</span>
-              ${item.img? `<img style="height:100px;  width:35%; object-fit:cover;" src="${item.img}"> `: ''}
+            ${res.events
+              .map(item => {
+                return `<li><a class="a-flex" href="${item.link}"><span>${
+                  item.title
+                }</span>
+              ${
+                item.img
+                  ? `<img style="height:100px;  width:35%; object-fit:cover;" src="${item.img}"> `
+                  : ""
+              }
               </a>
-              </li>`
-            }).join("")}
-             </ul>`: 'Nothing found On Events'}
+              </li>`;
+              })
+              .join("")}
+             </ul>`
+                : "Nothing found On Events"
+            }
 
         </div>
 
       </div>
       `);
-    });
-
-
+      }
+    );
   }
-
 
   keyPresDispatcher(e) {
     if (
