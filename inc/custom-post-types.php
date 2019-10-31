@@ -38,6 +38,8 @@ function univerity_themes_post_types()
       
 
     $args = array(
+        'capability_type'       => 'campus',
+        'map_meta_cap'          => true,
         'show_in_rest'          => true,
         'labels'                => $labels,
         'supports'              => $supports,
