@@ -1,18 +1,30 @@
 <?php
 
-function custom_login_redirect( $redirect_to, $request, $user ){
-    global $user;
-        if( isset( $user->roles ) && is_array( $user->roles ) ) {
-            if( in_array( "administrator", $user->roles ) ) {
-                return $redirect_to;
-                    } else {
-                    return home_url();
-            }
-        }
-        else
-            {
-                return $redirect_to;
-            }
+
+// Redirects Subscribers To Home Page
+function redirectsSubs(){
+    
+    $curentUser = wp_get_current_user();
+    
+    if(count($curentUser->roles) == 1 && $curentUser->roles[0] == 'subscriber'){
+        wp_redirect(site_url());
+        exit;
     }
 
-    add_filter("login_redirect", "custom_login_redirect", 10, 3);
+}
+
+add_action("admin_init", "redirectsSubs");
+
+
+// Hide Admin Bar For Subscribers
+function hideAdminBar(){
+    
+    $curentUser = wp_get_current_user();
+    
+    if(count($curentUser->roles) == 1 && $curentUser->roles[0] == 'subscriber'){
+        show_admin_bar(false);
+    }
+
+}
+
+add_action("wp_loaded", "hideAdminBar");
