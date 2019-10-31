@@ -1304,17 +1304,18 @@ body.login {
 }
 
 .note-body-field {
-  color: #333;
+  color:#333; 
   font-family: "Noto Sans JP", sans-serif;
   resize: none;
   display: block;
   width: 100%;
   line-height: 1.65;
   font-size: 1.15rem;
-  padding: 7px;
-  border: 1px solid transparent;
-  height: 175px;
+  padding: 25px;
+  min-height: 175px;
   outline: none;
+  border: 1px solid #ccc;
+  margin-top: 20px;
 }
 
 .note-active-field {

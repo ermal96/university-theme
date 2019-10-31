@@ -54,6 +54,51 @@ function univerity_themes_post_types()
     register_post_type('campus', $args);
 
 
+
+    //Notes Post Type
+    $labels = array(
+      'name'                          => 'Notes',
+      'singular_name'                 => 'Note',
+      'edit_item'                     => 'Edit Note',
+      'new_item'                      => 'New Note',
+      'view_item'                     => 'View Note',
+      'search_items'                  => 'Search Notes',
+      'not_found'                     => 'Notes Not Found',
+      'all_items'                     => 'All Notes',
+      'archives'                      => 'Notes Archives',
+      'attributes'                    => 'Notes Attributes',
+      'insert_into_item'              => 'Insert Into Note',
+      'featured_image'                => 'Image Note',
+      'set_featured_image'            => 'Set Note Image',
+      'remove_featured_image'         => 'Remove Note Image',
+      'item_published'                => 'Note Published',
+      'item_updated'                  => 'Note Updated',
+     );
+     
+    $supports = array(
+      'title',
+      'editor',
+      'excerpt',
+      'author',
+      'thumbnail',
+      'revisions'
+    );
+    
+
+    $args = array(
+      'show_in_rest'          => true,
+      'labels'                => $labels,
+      'supports'              => $supports,
+      'public'                => false,
+      'show_ui'               => true,
+      'has_archive'           => true,
+      'menu_icon'             => 'dashicons-welcome-write-blog',
+    );
+
+    register_post_type('notes', $args);
+
+
+
     //Events Post Type
     $labels = array(
       'name'                          => 'Events',
