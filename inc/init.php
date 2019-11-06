@@ -3,7 +3,7 @@
 //Include Search Router
 include('search-route.php');
 
-// Include Login Screen 
+// Include Login Screen
 include('login-screen.php');
 
 //Include Goolge Map Api
@@ -28,9 +28,7 @@ include('adjust-queries.php');
 include('custom-post-types.php');
 
 //Include Widgets
-include('widgets.php');
+//include('widgets.php');
 
 // Include Custom Rest Fields
 include('custom-field-rest-api.php');
-
-
