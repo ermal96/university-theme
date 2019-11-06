@@ -33,9 +33,10 @@ $userNotes = new WP_Query(array(
     <ul class="min-list link-list" id="my-notes">
 
         <?php while ($userNotes->have_posts()): $userNotes->the_post() ?>
+        <?php $title = get_post(get_the_ID());?>
         <li data-id="<?php the_ID() ?>">
             <span contentEditable='false' class="note-title-field" type="text">
-                <?php echo esc_attr(get_the_title()) ?>
+                <?php echo esc_attr($title->post_title) ?>
             </span>
             <span class="edit-note"><i class="fa fa-pencil"></i> Edit</span>
             <span class="delete-note"><i class="fa fa-trash-o"></i> Delete</span>

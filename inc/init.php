@@ -12,6 +12,9 @@ include('google-map-api.php');
 //Include Redirects Users
 include('redirects-users.php');
 
+//Private Post Types
+include('private-post-type.php');
+
 //Include Page Banner
 include('page-banner.php');
 
