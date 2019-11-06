@@ -1,6 +1,6 @@
 <?php
 
-if(!is_user_logged_in()){
+if (!is_user_logged_in()) {
     wp_redirect(esc_url(site_url()));
     exit;
 }
@@ -9,7 +9,7 @@ get_header();
 
 while (have_posts()): the_post(); ?>
 
-<?php 
+<?php
 
 $userNotes = new WP_Query(array(
     'post_type'        => 'notes',
@@ -20,25 +20,34 @@ $userNotes = new WP_Query(array(
 
 ?>
 
-    <?php pageBanner(); ?>
+<?php pageBanner(); ?>
 
-    <div class="container container--narrow page-section">
-        <ul class="min-list link-list" id="my-notes">
+<div class="container container--narrow page-section">
+    <div class="create-note">
+        <h2>Create New Note</h2>
+        <input placeholder="Title" class="new-note-title">
+        <textarea placeholder="Content Here" class="new-note-body">
+        </textarea>
+        <span class="submit-note">Create Note</span>
+    </div>
+    <ul class="min-list link-list" id="my-notes">
 
-        <?php while($userNotes->have_posts()): $userNotes->the_post() ?>
-                <li data-id="<?php the_ID() ?>">
-                    <input readonly class="note-title-field" type="text" value="<?php echo esc_attr(get_the_title()) ?>">
-                    <span class="edit-note"><i class="fa fa-pencil"></i> Edit</span>
-                    <span class="delete-note"><i class="fa fa-trash-o"></i> Delete</span>
-                    <textarea readonly class="note-body-field" cols="30" rows="10">
-                        <?php echo esc_attr(the_content()) ?>
-                    </textarea>
-                    <span class="update-note btn btn--blue btn--small"><i class="fa fa-arrow-right"></i> Save</span>
-                </li>
+        <?php while ($userNotes->have_posts()): $userNotes->the_post() ?>
+        <li data-id="<?php the_ID() ?>">
+            <span contentEditable='false' class="note-title-field" type="text">
+                <?php echo esc_attr(get_the_title()) ?>
+            </span>
+            <span class="edit-note"><i class="fa fa-pencil"></i> Edit</span>
+            <span class="delete-note"><i class="fa fa-trash-o"></i> Delete</span>
+            <span contentEditable="false" class="note-body-field">
+                <?php echo the_content() ?>
+            </span>
+            <span class="update-note btn btn--blue btn--small"><i class="fa fa-arrow-right"></i> Save</span>
+        </li>
         <?php endwhile; ?>
 
-        </ul>
-    </div>
+    </ul>
+</div>
 
 <?php endwhile;
 
