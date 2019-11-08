@@ -100,6 +100,35 @@ function univerity_themes_post_types()
     register_post_type('notes', $args);
 
 
+    //Likes Post Type
+    $labels = array(
+      'name'                          => 'Likes',
+      'singular_name'                 => 'Like',
+      'edit_item'                     => 'Edit Like',
+      'new_item'                      => 'New Like',
+      'view_item'                     => 'View Like',
+      'search_items'                  => 'Search Likes',
+      'not_found'                     => 'Likes Not Found',
+      'all_items'                     => 'All Likes'
+     );
+     
+    $supports = array(
+      'title',
+      'author'
+    );
+    
+
+    $args = array(
+      'labels'                => $labels,
+      'supports'              => $supports,
+      'public'                => false,
+      'show_ui'               => true,
+      'menu_icon'             => 'dashicons-heart',
+    );
+
+    register_post_type('like', $args);
+
+
 
     //Events Post Type
     $labels = array(
