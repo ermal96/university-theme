@@ -1046,7 +1046,7 @@ li {
 
 /* Like Box */
 
-.generic-content .like-box {
+.like-box {
   float: right;
   font-size: 1rem;
   background-color: #ededed;
@@ -1057,9 +1057,11 @@ li {
   cursor: pointer;
   margin: 0 0 30px 30px;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.generic-content .like-box:hover {
+.like-box:hover {
   background-color: #dedede;
 }
 
