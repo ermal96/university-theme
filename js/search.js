@@ -47,7 +47,6 @@ class Search {
         universityData.root_url
       }/wp-json/university/v1/search?term=${this.searchField.val()}`,
       res => {
-        console.log(res);
         this.resultsDiv.html(`
       <div class="row">
 
