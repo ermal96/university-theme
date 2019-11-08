@@ -3,6 +3,9 @@
 //Include Search Router
 include('search-route.php');
 
+//Include Like Router
+include('like-route.php');
+
 // Include Login Screen
 include('login-screen.php');
 
