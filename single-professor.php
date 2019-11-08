@@ -9,7 +9,55 @@
       <?php the_post_thumbnail('professorPortrait') ?>
     </div>
     <div class="col">
-      <?php the_content();?>
+
+      <?php
+    
+    $likeCount = new WP_Query(array(
+      'post_type' => 'like',
+      'meta_query' => array(
+        array(
+          'key' => 'professor_like_id',
+          'compare' => '=',
+          'value' => get_the_ID()
+        )
+      )
+    ));
+
+   
+    $dataLike = 'no';
+    if (is_user_logged_in()) {
+        $likeExists = new WP_Query(array(
+          'post_type' => 'like',
+          'author' => wp_get_current_user()->data->ID,
+          'meta_query' => array(
+             array(
+                'key' => 'professor_like_id',
+                'compare' => '=',
+                'value' => get_the_ID()
+      )
+    )
+    ));
+        if ($likeExists->found_posts) {
+            $dataLike = 'yes';
+        }
+    }
+
+    $user = wp_get_current_user()->data->user_nicename;
+    ?>
+
+      <span class="like-box" data-user="<?php echo $user ; ?>"
+        data-post-id="<?php the_ID(); ?>"
+        data-id="<?php echo $likeExists->posts[0]->ID; ?>"
+        data-title="<?php the_title(); ?>"
+        data-exists="<?php echo $dataLike; ?>">
+
+        <i class=" fa fa-heart-o"></i>
+        <i class="fa fa-heart"></i>
+        <span class="like-count"><?php echo $likeCount->found_posts; ?></span>
+      </span>
+      <?php
+     print_pre(wp_get_current_user()->data->ID);
+      the_content();?>
     </div>
   </div>
   <ul class="link-list min-list">
